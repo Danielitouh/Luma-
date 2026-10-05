@@ -1,0 +1,41 @@
+// Exact pet/agent excerpts from the removed Luma editor.
+// Source fragments, not a standalone component. Host contracts are in README.md.
+
+// Original import; app/page.tsx:21
+import {lumaAgent} from '@/lib/luma-agent';
+
+// Original import; app/page.tsx:22
+import {LumaPet} from '@/components/luma-pet';
+
+// Original declaration (const); app/page.tsx:26
+uid=()=>crypto.randomUUID?.()||Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('')
+
+// Original declaration (const); app/page.tsx:28
+accents={ember:'#c44d38',ocean:'#2362a4',violet:'#7552aa',forest:'#287764'}
+
+// Original declaration (const); app/page.tsx:33
+[ai,setAi]=useState<{pageId:string,blockId:string,start:number,end:number,cursor:number,original:string,action:string}|null>(null)
+
+// Original declaration (const); app/page.tsx:33
+[aiQuestion,setAiQuestion]=useState('')
+
+// Original declaration (const); app/page.tsx:33
+[aiResult,setAiResult]=useState('')
+
+// Original declaration (const); app/page.tsx:33
+[aiError,setAiError]=useState('')
+
+// Original declaration (const); app/page.tsx:33
+[aiWorking,setAiWorking]=useState(false)
+
+// Original declaration (const); app/page.tsx:33
+aiRequestActive=useRef(false)
+
+// Original declaration (const); app/page.tsx:33
+aiRequestId=useRef(0)
+
+// Original callback; app/page.tsx:86
+function prepareAI(action:string){if(!ai)return;if(aiRequestActive.current){setAiError('A previous request is still finishing. Try again in a moment.');return;}const snapshot={...ai,action};setAi(snapshot);setAiResult('');setAiError('');if(action!=='Ask a question')void runAI(snapshot,action)}
+
+// Original host JSX; app/page.tsx:127
+<LumaPet/>

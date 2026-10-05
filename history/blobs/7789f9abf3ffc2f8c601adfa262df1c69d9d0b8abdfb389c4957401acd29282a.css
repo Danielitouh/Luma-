@@ -1,0 +1,54 @@
+.luma-pet{position:fixed;right:20px;bottom:calc(22px + env(safe-area-inset-bottom));width:96px;height:111px;z-index:20;pointer-events:none;user-select:none;filter:drop-shadow(0 8px 12px #233f7333);transition:opacity .25s ease,transform .25s ease}
+.luma-pet-hidden{opacity:0;transform:translateY(18px)}
+.luma-pet-wander{position:relative;width:100%;height:100%;animation:pet-wander 17s ease-in-out infinite;will-change:transform}
+.luma-pet-menu-open .luma-pet-wander{animation-play-state:paused}
+.luma-pet-trigger{display:block;width:100%;height:100%;border:0;background:transparent;padding:0;pointer-events:auto;touch-action:manipulation;animation:pet-footsteps .55s ease-in-out infinite}
+.luma-pet-trigger:hover{filter:brightness(1.12)}
+.luma-pet-trigger:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:22px}
+.luma-pet-menu-open .luma-pet-trigger{animation:none}
+.luma-pet-thought{position:absolute;right:0;bottom:calc(100% + 21px);width:min(286px,calc(100vw - 26px));padding:15px;border:1px solid #d6e0e9;border-radius:20px 20px 6px 20px;background:#fcfdff;box-shadow:0 14px 46px #1d2f5160;pointer-events:auto;color:#303949;user-select:text;transform-origin:90% 100%;animation:pet-thought-in .26s cubic-bezier(.2,.85,.26,1.08) both}
+.luma-pet-thought::before,.luma-pet-thought::after{content:"";position:absolute;border-radius:50%;background:inherit;border:1px solid #d6e0e9}
+.luma-pet-thought::before{right:27px;bottom:-14px;width:12px;height:12px}
+.luma-pet-thought::after{right:20px;bottom:-25px;width:6px;height:6px}
+.luma-pet-thought-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:700;color:#26334b}
+.luma-pet-thought-head button{display:grid;place-items:center;width:27px;height:27px;border:0;border-radius:8px;background:transparent;color:#67788d}
+.luma-pet-thought-head button:hover{background:#eaf0f5}
+.luma-pet-thought p{margin:10px 0 0;font-size:13px;line-height:1.45;color:#5a6879;overflow-wrap:anywhere}
+.luma-pet-thought strong{color:#283951}
+.luma-pet-freedom{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:42px;margin-top:13px;padding:8px 10px;border:1px solid #7863a0;border-radius:12px;background:linear-gradient(115deg,#d7e9ff,#e7d9f7 55%,#f4d9da);color:#33435d;font-size:13px;font-weight:700;box-shadow:0 5px 14px #3a527529;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.luma-pet-freedom:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 9px 20px #3a52753b}
+.luma-pet-freedom:disabled{opacity:.65}
+.luma-pet-thought .luma-pet-scope{font-size:12px;color:#69798b}
+.luma-pet-thought .luma-pet-feedback{padding:8px 10px;border-radius:10px;background:#edf3f8;color:#43536b}
+.luma-pet-thought .luma-pet-feedback.error{background:#f9eeeb;color:#9e4d40}
+.luma-pet-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:4px 2px;border:0;background:transparent;color:#6a5c86;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+@keyframes pet-wander{0%,12%{transform:translate3d(0,0,0)}33%,44%{transform:translate3d(max(-155px,-22vw),0,0)}64%,74%{transform:translate3d(max(-76px,-11vw),0,0)}93%,100%{transform:translate3d(0,0,0)}}
+@keyframes pet-footsteps{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(1deg)}}
+@keyframes pet-thought-in{from{opacity:0;transform:translateY(10px) scale(.87)}to{opacity:1;transform:translateY(0) scale(1)}}
+.luma-pet-sprite{position:relative;display:block;width:100%;height:100%;transform-origin:50% 85%;animation:pet-breathe 3.8s ease-in-out infinite;will-change:transform}
+.luma-pet-sprite img{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.luma-pet-face{position:absolute;left:28%;top:37%;width:44%;height:13%;fill:#79f5ff;filter:drop-shadow(0 0 2px #56d7f4);overflow:visible}
+.luma-pet-happy .luma-pet-sprite{animation:pet-hop .66s cubic-bezier(.22,.72,.28,1) infinite}
+.luma-pet-thinking .luma-pet-sprite{animation:pet-think 2.4s ease-in-out infinite}
+.luma-pet-working .luma-pet-sprite{animation:pet-work .62s ease-in-out infinite}
+.luma-pet-sad .luma-pet-sprite{animation:pet-sad 2.3s ease-in-out infinite}
+.luma-pet-surprised .luma-pet-sprite{animation:pet-surprise .48s ease-in-out infinite}
+.luma-pet-sleepy .luma-pet-sprite{animation:pet-sleep 3s ease-in-out infinite}
+@keyframes pet-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.015,.992)}}
+@keyframes pet-hop{0%,100%{transform:translateY(0) scale(1.03,.97)}48%{transform:translateY(-10px) scale(.98,1.04)}72%{transform:translateY(-3px)}}
+@keyframes pet-think{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(3deg) translateY(-4px)}}
+@keyframes pet-work{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes pet-sad{0%,100%{transform:translateY(3px) rotate(1deg) scaleY(.97)}50%{transform:translateY(5px) rotate(-1deg) scaleY(.95)}}
+@keyframes pet-surprise{0%,100%{transform:scale(1)}50%{transform:scale(1.065) translateY(-3px)}}
+@keyframes pet-sleep{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(4px) rotate(2deg)}}
+@media(max-width:767px){.luma-pet{right:10px;bottom:calc(84px + env(safe-area-inset-bottom));width:76px;height:88px}.luma-pet-thought{bottom:calc(100% + 17px)}}
+@media(prefers-reduced-motion:reduce){.luma-pet-sprite,.luma-pet-wander,.luma-pet-trigger,.luma-pet-thought{animation:none!important}.luma-pet,.luma-pet-freedom{transition:none}}
+[data-luma-theme=dark] .luma-pet-thought{background:#202c3b;border-color:#4e6176;color:#e9f1fa;box-shadow:0 14px 45px #000a}
+[data-luma-theme=dark] .luma-pet-thought::before,[data-luma-theme=dark] .luma-pet-thought::after{border-color:#4e6176}
+[data-luma-theme=dark] .luma-pet-thought-head,[data-luma-theme=dark] .luma-pet-thought strong{color:#f0f4fb}
+[data-luma-theme=dark] .luma-pet-thought p,[data-luma-theme=dark] .luma-pet-thought .luma-pet-scope{color:#b4c4d6}
+[data-luma-theme=dark] .luma-pet-thought-head button{color:#c2d1df}
+[data-luma-theme=dark] .luma-pet-thought-head button:hover,[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback{background:#314253;color:#dde9f4}
+[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback.error{background:#493839;color:#ffc4b9}
+[data-luma-theme=dark] .luma-pet-freedom{background:linear-gradient(115deg,#334967,#513f64 56%,#60404c);border-color:#7d6d95;color:#f3effb}
+[data-luma-theme=dark] .luma-pet-link{color:#cbb5ea}

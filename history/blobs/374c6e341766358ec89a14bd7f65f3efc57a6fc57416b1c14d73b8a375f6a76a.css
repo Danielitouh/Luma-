@@ -1,0 +1,20 @@
+.luma-pet{position:fixed;right:20px;bottom:calc(22px + env(safe-area-inset-bottom));width:96px;height:111px;z-index:20;pointer-events:none;user-select:none;filter:drop-shadow(0 8px 12px #233f7333);transition:opacity .25s ease,transform .25s ease}
+.luma-pet-hidden{opacity:0;transform:translateY(18px)}
+.luma-pet-sprite{position:relative;display:block;width:100%;height:100%;transform-origin:50% 85%;animation:pet-breathe 3.8s ease-in-out infinite;will-change:transform}
+.luma-pet-sprite img{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.luma-pet-face{position:absolute;left:28%;top:37%;width:44%;height:13%;fill:#79f5ff;filter:drop-shadow(0 0 2px #56d7f4);overflow:visible}
+.luma-pet-happy .luma-pet-sprite{animation:pet-hop .66s cubic-bezier(.22,.72,.28,1) infinite}
+.luma-pet-thinking .luma-pet-sprite{animation:pet-think 2.4s ease-in-out infinite}
+.luma-pet-working .luma-pet-sprite{animation:pet-work .62s ease-in-out infinite}
+.luma-pet-sad .luma-pet-sprite{animation:pet-sad 2.3s ease-in-out infinite}
+.luma-pet-surprised .luma-pet-sprite{animation:pet-surprise .48s ease-in-out infinite}
+.luma-pet-sleepy .luma-pet-sprite{animation:pet-sleep 3s ease-in-out infinite}
+@keyframes pet-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.015,.992)}}
+@keyframes pet-hop{0%,100%{transform:translateY(0) scale(1.03,.97)}48%{transform:translateY(-10px) scale(.98,1.04)}72%{transform:translateY(-3px)}}
+@keyframes pet-think{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(3deg) translateY(-4px)}}
+@keyframes pet-work{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes pet-sad{0%,100%{transform:translateY(3px) rotate(1deg) scaleY(.97)}50%{transform:translateY(5px) rotate(-1deg) scaleY(.95)}}
+@keyframes pet-surprise{0%,100%{transform:scale(1)}50%{transform:scale(1.065) translateY(-3px)}}
+@keyframes pet-sleep{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(4px) rotate(2deg)}}
+@media(max-width:767px){.luma-pet{right:10px;bottom:calc(84px + env(safe-area-inset-bottom));width:76px;height:88px}}
+@media(prefers-reduced-motion:reduce){.luma-pet-sprite{animation:none!important}.luma-pet{transition:none}}

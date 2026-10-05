@@ -1,0 +1,151 @@
+// Exact pet/agent excerpts from the removed Luma editor.
+// Source fragments, not a standalone component. Host contracts are in README.md.
+
+// Original import; app/page.tsx:19
+import {useAIConnection,AIConnectionSettings} from '@/components/ai-connection';
+
+// Original import; app/page.tsx:20
+import {aiErrorMessage} from '@/lib/ai-provider';
+
+// Original import; app/page.tsx:21
+import {LumaPet} from '@/components/luma-pet';
+
+// Original import; app/page.tsx:25
+import {lumaAgent} from '@/lib/luma-agent';
+
+// Original declaration (const); app/page.tsx:27
+uid=()=>crypto.randomUUID?.()||Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('')
+
+// Original declaration (const); app/page.tsx:29
+accents={ember:'#c44d38',ocean:'#2362a4',violet:'#7552aa',forest:'#287764'}
+
+// Original declaration (const); app/page.tsx:30
+darkAccents={ember:'#ef947b',ocean:'#8bbbe9',violet:'#bf9cf0',forest:'#8dd0ad'}
+
+// Original declaration (const); app/page.tsx:31
+codexColors={ember:['#eaa488','#d47a9b'],ocean:['#72bad0','#829fd2'],violet:['#c298d5','#8fa5df'],forest:['#87bea3','#8bbec8']} as const
+
+// Original declaration (const); app/page.tsx:36
+[ai,setAi]=useState<{pageId:string,blockId:string,start:number,end:number,cursor:number,original:string,action:string}|null>(null)
+
+// Original declaration (const); app/page.tsx:36
+[aiQuestion,setAiQuestion]=useState('')
+
+// Original declaration (const); app/page.tsx:36
+[aiResult,setAiResult]=useState('')
+
+// Original declaration (const); app/page.tsx:36
+[aiError,setAiError]=useState('')
+
+// Original declaration (const); app/page.tsx:36
+[aiWorking,setAiWorking]=useState(false)
+
+// Original declaration (const); app/page.tsx:36
+[codexNote,setCodexNote]=useState('')
+
+// Original declaration (const); app/page.tsx:36
+aiRequestActive=useRef(false)
+
+// Original declaration (const); app/page.tsx:36
+aiRequestId=useRef(0)
+
+// Original declaration (const); app/page.tsx:38
+[agentWorking,setAgentWorking]=useState(false)
+
+// Original declaration (const); app/page.tsx:39
+[agentNote,setAgentNote]=useState('')
+
+// Original declaration (const); app/page.tsx:40
+[agentError,setAgentError]=useState('')
+
+// Original declaration (const); app/page.tsx:41
+[agentUndo,setAgentUndo]=useState<{pageId:string,before:Page,after:Page}|null>(null)
+
+// Original declaration (const); app/page.tsx:42
+agentRunId=useRef(0)
+
+// Original declaration (const); app/page.tsx:43
+activePageRef=useRef({view,pageId})
+
+// Original lifecycle statement; app/page.tsx:43
+activePageRef.current={view,pageId};
+
+// Original declaration (const); app/page.tsx:44
+aiClient=useAIConnection(!!ai||connection||agentWorking,()=>aiRequestActive.current)
+
+// Original lifecycle statement; app/page.tsx:49
+useEffect(()=>{agentRunId.current++;if(lumaAgent.status==='awake')lumaAgent.sleep();setAgentWorking(false);setAgentNote('');setAgentError('');setAgentUndo(null)},[view,pageId]);
+
+// Original callback; app/page.tsx:101
+async function runCodex(snapshot:NonNullable<typeof ai>){
+  if(aiRequestActive.current||lumaAgent.status==='asleep')return;
+  const original=current.current.pages.find(p=>p.id===snapshot.pageId);
+  if(!original){setAiError('This page is no longer available.');return;}
+  aiRequestActive.current=true;setAiWorking(true);setAiError('');setCodexNote('');
+  const requestId=++aiRequestId.current,baseline=JSON.stringify(original);
+  try{
+   const plan=await lumaAgent.planPage(original,messages=>aiClient.generate(messages.map(message=>`${message.role}: ${message.content}`).join('\n\n')));
+   if(aiRequestId.current!==requestId||lumaAgent.getSnapshot().status==='asleep')return;
+   const latest=current.current.pages.find(p=>p.id===snapshot.pageId);
+   if(!latest||JSON.stringify(latest)!==baseline)throw new Error('The page changed while Codex was thinking. Reopen it from the current page.');
+   if(plan.changes.length){
+    const updated=applyPagePlan(original,plan,uid);
+    mutate(w=>({...w,pages:w.pages.map(p=>p.id===snapshot.pageId&&JSON.stringify(p)===baseline?updated:p)}));
+   }
+   setCodexNote(plan.note|| (plan.changes.length?'Codex updated this page.':'Codex found nothing to change on this page.'));
+  }catch(error){if(aiRequestId.current===requestId)setAiError(aiErrorMessage(error))}
+  finally{aiRequestActive.current=false;if(aiRequestId.current===requestId)setAiWorking(false)}
+ }
+
+// Original callback; app/page.tsx:120
+async function givePetPageFreedom(){
+  if(agentWorking)return;
+  if(aiRequestActive.current){setAgentError('Another AI request is finishing. Try again in a moment.');return;}
+  const location=activePageRef.current;
+  if(location.view!=='editor')return;
+  const original=current.current.pages.find(p=>p.id===location.pageId);
+  if(!original)return;
+  const run=++agentRunId.current,baseline=JSON.stringify(original);
+  aiRequestActive.current=true;setAgentWorking(true);setAgentError('');setAgentNote('');setAgentUndo(null);lumaAgent.wake();
+  try{
+   const plan=await lumaAgent.planPage(original,messages=>aiClient.generate(messages.map(message=>`${message.role}: ${message.content}`).join('\n\n')));
+   if(run!==agentRunId.current||lumaAgent.status==='asleep')return;
+   if(activePageRef.current.view!=='editor'||activePageRef.current.pageId!==location.pageId)throw new Error('Codex stopped when you left that page.');
+   const latest=current.current.pages.find(p=>p.id===location.pageId);
+   if(!latest||JSON.stringify(latest)!==baseline)throw new Error('This page changed while Codex was thinking. Tap again to work from its latest version.');
+   if(plan.changes.length){
+    const updated=applyPagePlan(original,plan,uid);
+    mutate(w=>({...w,pages:w.pages.map(p=>p.id===location.pageId&&JSON.stringify(p)===baseline?updated:p)}));
+    setAgentUndo({pageId:location.pageId,before:original,after:updated});
+   }
+   setAgentNote(plan.note|| (plan.changes.length?'I made a few helpful changes here.':'This page looks good as it is.'));
+  }catch(error){if(run===agentRunId.current)setAgentError(aiErrorMessage(error))}
+  finally{aiRequestActive.current=false;if(run===agentRunId.current)setAgentWorking(false)}
+ }
+
+// Original callback; app/page.tsx:144
+function pausePet(){agentRunId.current++;lumaAgent.sleep();setAgentWorking(false);setAgentError('');setAgentNote('Codex is resting.');}
+
+// Original callback; app/page.tsx:145
+function undoPetChanges(){
+  if(!agentUndo||agentWorking)return;
+  const latest=current.current.pages.find(p=>p.id===agentUndo.pageId);
+  if(activePageRef.current.view!=='editor'||activePageRef.current.pageId!==agentUndo.pageId||!latest||JSON.stringify(latest)!==JSON.stringify(agentUndo.after)){
+   setAgentError('This page changed since Codex edited it, so it can’t be undone automatically.');setAgentUndo(null);return;
+  }
+  const restored={...agentUndo.before,updated:new Date().toISOString()};
+  mutate(w=>({...w,pages:w.pages.map(p=>p.id===agentUndo.pageId&&JSON.stringify(p)===JSON.stringify(agentUndo.after)?restored:p)}));
+  setAgentUndo(null);setAgentError('');setAgentNote('Codex’s changes were undone.');
+ }
+
+// Original callback; app/page.tsx:155
+function prepareAI(action:string){if(!ai)return;if(aiRequestActive.current){setAiError('A previous request is still finishing. Try again in a moment.');return;}const snapshot={...ai,action};setAi(snapshot);setAiResult('');setAiError('');setCodexNote('');if(action==='Codex'){if(lumaAgent.status==='awake')void runCodex(snapshot);return;}if(action!=='Ask a question')void runAI(snapshot,action)}
+
+// Original animated Codex button; app/page.tsx:183
+<CommandItem className="inline-ai-codex" style={{'--codex-accent':accents[data.settings.accent],'--codex-glow':codexColors[data.settings.accent][0],'--codex-shift':codexColors[data.settings.accent][1]} as CSSProperties} onSelect={()=>prepareAI('Codex')}><span className="codex-mark" aria-hidden="true">✦</span><span>Codex</span></CommandItem>
+
+// Original host JSX; app/page.tsx:195
+<AIConnectionSettings client={aiClient} locked={aiWorking||agentWorking||aiRequestActive.current}/>
+
+// Original host JSX; app/page.tsx:197
+<LumaPet pageTitle={view==='editor'?page?.title||'Untitled':undefined} working={agentWorking} note={agentNote} error={agentError} canUndo={!!agentUndo} onFreedom={()=>void givePetPageFreedom()} onPause={pausePet} onUndo={undoPetChanges} onOpenSettings={()=>setConnection(true)}/>
