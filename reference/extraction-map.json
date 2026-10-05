@@ -1,0 +1,1433 @@
+{
+  "integration": {
+    "chunks": [
+      {
+        "label": "Original import",
+        "start": 1783,
+        "end": 1863,
+        "text": "import {useAIConnection,AIConnectionSettings} from '@/components/ai-connection';"
+      },
+      {
+        "label": "Original import",
+        "start": 1864,
+        "end": 1913,
+        "text": "import {aiErrorMessage} from '@/lib/ai-provider';"
+      },
+      {
+        "label": "Original import",
+        "start": 1914,
+        "end": 1960,
+        "text": "import {LumaPet} from '@/components/luma-pet';"
+      },
+      {
+        "label": "Original import",
+        "start": 2189,
+        "end": 2232,
+        "text": "import {lumaAgent} from '@/lib/luma-agent';"
+      },
+      {
+        "label": "Original import",
+        "start": 2233,
+        "end": 2289,
+        "text": "import {runPageInitiative} from '@/lib/page-initiative';"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 2296,
+        "end": 2424,
+        "text": "uid=()=>crypto.randomUUID?.()||Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 2519,
+        "end": 2594,
+        "text": "accents={ember:'#c44d38',ocean:'#2362a4',violet:'#7552aa',forest:'#287764'}"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 2602,
+        "end": 2681,
+        "text": "darkAccents={ember:'#ef947b',ocean:'#8bbbe9',violet:'#bf9cf0',forest:'#8dd0ad'}"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 2689,
+        "end": 2825,
+        "text": "codexColors={ember:['#eaa488','#d47a9b'],ocean:['#72bad0','#829fd2'],violet:['#c298d5','#8fa5df'],forest:['#87bea3','#8bbec8']} as const"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 4981,
+        "end": 5111,
+        "text": "[ai,setAi]=useState<{pageId:string,blockId:string,start:number,end:number,cursor:number,original:string,action:string}|null>(null)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5118,
+        "end": 5157,
+        "text": "[aiQuestion,setAiQuestion]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5164,
+        "end": 5199,
+        "text": "[aiResult,setAiResult]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5206,
+        "end": 5239,
+        "text": "[aiError,setAiError]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5246,
+        "end": 5286,
+        "text": "[aiWorking,setAiWorking]=useState(false)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5293,
+        "end": 5330,
+        "text": "[codexNote,setCodexNote]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5337,
+        "end": 5366,
+        "text": "aiRequestActive=useRef(false)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5373,
+        "end": 5394,
+        "text": "aiRequestId=useRef(0)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5454,
+        "end": 5500,
+        "text": "[agentWorking,setAgentWorking]=useState(false)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5509,
+        "end": 5546,
+        "text": "[agentNote,setAgentNote]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5555,
+        "end": 5594,
+        "text": "[agentError,setAgentError]=useState('')"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5603,
+        "end": 5687,
+        "text": "[agentUndo,setAgentUndo]=useState<{pageId:string,before:Page,after:Page}|null>(null)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5696,
+        "end": 5716,
+        "text": "agentRunId=useRef(0)"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5725,
+        "end": 5760,
+        "text": "activePageRef=useRef({view,pageId})"
+      },
+      {
+        "label": "Original lifecycle statement",
+        "start": 5761,
+        "end": 5797,
+        "text": "activePageRef.current={view,pageId};"
+      },
+      {
+        "label": "Original declaration (const)",
+        "start": 5805,
+        "end": 5889,
+        "text": "aiClient=useAIConnection(!!ai||connection||agentWorking,()=>aiRequestActive.current)"
+      },
+      {
+        "label": "Original lifecycle statement",
+        "start": 6298,
+        "end": 6475,
+        "text": "useEffect(()=>{agentRunId.current++;if(lumaAgent.status==='awake')lumaAgent.sleep();setAgentWorking(false);setAgentNote('');setAgentError('');setAgentUndo(null)},[view,pageId]);"
+      },
+      {
+        "label": "Original callback",
+        "start": 16131,
+        "end": 16709,
+        "text": "function commitAgentPage(initial:Page,before:Page,after:Page){\n  const latest=current.current.pages.find(p=>p.id===before.id);\n  if(!loaded||activePageRef.current.view!=='editor'||activePageRef.current.pageId!==before.id||!latest||JSON.stringify(latest)!==JSON.stringify(before))throw new Error('This page changed while Codex was working. I stopped to protect your edits.');\n  const updated={...current.current,pages:current.current.pages.map(p=>p.id===before.id?after:p)};\n  current.current=updated;setData(updated);\n  setAgentUndo({pageId:initial.id,before:initial,after});\n }"
+      },
+      {
+        "label": "Original callback",
+        "start": 16711,
+        "end": 17931,
+        "text": "async function runCodex(snapshot:NonNullable<typeof ai>){\n  if(aiRequestActive.current||lumaAgent.status==='asleep')return;\n  const original=current.current.pages.find(p=>p.id===snapshot.pageId);\n  if(!original){setAiError('This page is no longer available.');return;}\n  aiRequestActive.current=true;setAiWorking(true);setAiError('');setCodexNote('');\n  const requestId=++aiRequestId.current;\n  try{\n   const result=await runPageInitiative({page:original,newId:uid,\n    isActive:()=>aiRequestId.current===requestId&&lumaAgent.status==='awake'&&activePageRef.current.view==='editor'&&activePageRef.current.pageId===original.id,\n    plan:(page,progress)=>lumaAgent.planPage(page,messages=>aiClient.generate(messages.map(message=>`${message.role}: ${message.content}`).join('\\n\\n')),progress),\n    commit:(before,after)=>commitAgentPage(original,before,after)});\n   if(aiRequestId.current!==requestId)return;\n   setCodexNote(result.note||(result.changed?'I added something useful to this page.':'Nothing else needs changing right now.'));\n  }catch(error){if(aiRequestId.current===requestId)setAiError(aiErrorMessage(error))}\n  finally{aiRequestActive.current=false;if(aiRequestId.current===requestId)setAiWorking(false)}\n }"
+      },
+      {
+        "label": "Original callback",
+        "start": 17933,
+        "end": 19364,
+        "text": "async function givePetPageFreedom(){\n  if(agentWorking)return;\n  if(aiRequestActive.current){setAgentError('Another AI request is finishing. Try again in a moment.');return;}\n  const location=activePageRef.current;\n  if(location.view!=='editor')return;\n  const original=current.current.pages.find(p=>p.id===location.pageId);\n  if(!original)return;\n  const run=++agentRunId.current;\n  aiRequestActive.current=true;setAgentWorking(true);setAgentError('');setAgentNote('');lumaAgent.wake();\n  try{\n   const result=await runPageInitiative({page:original,newId:uid,\n    isActive:()=>run===agentRunId.current&&lumaAgent.status==='awake'&&activePageRef.current.view==='editor'&&activePageRef.current.pageId===location.pageId,\n    plan:(page,progress)=>lumaAgent.planPage(page,messages=>aiClient.generate(messages.map(message=>`${message.role}: ${message.content}`).join('\\n\\n')),progress),\n    commit:(before,after)=>commitAgentPage(original,before,after),\n    onPass:pass=>setAgentNote(pass===1?'Choosing what would help here\u2026':`Reviewing my work and choosing the next step (${pass}/3)\u2026`)});\n   if(run!==agentRunId.current)return;\n   setAgentNote(result.note||(result.changed?'I added something useful to this page.':'Nothing else needs changing right now.'));\n  }catch(error){if(run===agentRunId.current)setAgentError(aiErrorMessage(error))}\n  finally{aiRequestActive.current=false;if(run===agentRunId.current)setAgentWorking(false)}\n }"
+      },
+      {
+        "label": "Original callback",
+        "start": 19366,
+        "end": 19501,
+        "text": "function pausePet(){agentRunId.current++;lumaAgent.sleep();setAgentWorking(false);setAgentError('');setAgentNote('Codex is resting.');}"
+      },
+      {
+        "label": "Original callback",
+        "start": 19503,
+        "end": 20222,
+        "text": "function undoPetChanges(){\n  if(!agentUndo||agentWorking)return;\n  const latest=current.current.pages.find(p=>p.id===agentUndo.pageId);\n  if(activePageRef.current.view!=='editor'||activePageRef.current.pageId!==agentUndo.pageId||!latest||JSON.stringify(latest)!==JSON.stringify(agentUndo.after)){\n   setAgentError('This page changed since Codex edited it, so it can\u2019t be undone automatically.');setAgentUndo(null);return;\n  }\n  const restored={...agentUndo.before,updated:new Date().toISOString()};\n  mutate(w=>({...w,pages:w.pages.map(p=>p.id===agentUndo.pageId&&JSON.stringify(p)===JSON.stringify(agentUndo.after)?restored:p)}));\n  setAgentUndo(null);setAgentError('');setAgentNote('Codex\u2019s changes were undone.');\n }"
+      },
+      {
+        "label": "Original callback",
+        "start": 20224,
+        "end": 20618,
+        "text": "function prepareAI(action:string){if(!ai)return;if(aiRequestActive.current){setAiError('A previous request is still finishing. Try again in a moment.');return;}const snapshot={...ai,action};setAi(snapshot);setAiResult('');setAiError('');setCodexNote('');if(action==='Codex'){if(lumaAgent.status==='awake')void runCodex(snapshot);return;}if(action!=='Ask a question')void runAI(snapshot,action)}"
+      },
+      {
+        "label": "Original animated Codex button",
+        "start": 51530,
+        "end": 51872,
+        "text": "<CommandItem className=\"inline-ai-codex\" style={{'--codex-accent':accents[data.settings.accent],'--codex-glow':codexColors[data.settings.accent][0],'--codex-shift':codexColors[data.settings.accent][1]} as CSSProperties} onSelect={()=>prepareAI('Codex')}><span className=\"codex-mark\" aria-hidden=\"true\">\u2726</span><span>Codex</span></CommandItem>"
+      },
+      {
+        "label": "Original host JSX",
+        "start": 54145,
+        "end": 54244,
+        "text": "<AIConnectionSettings client={aiClient} locked={aiWorking||agentWorking||aiRequestActive.current}/>"
+      },
+      {
+        "label": "Original host JSX",
+        "start": 54886,
+        "end": 55165,
+        "text": "<LumaPet pageTitle={view==='editor'?page?.title||'Untitled':undefined} working={agentWorking} note={agentNote} error={agentError} canUndo={!!agentUndo} onFreedom={()=>void givePetPageFreedom()} onPause={pausePet} onUndo={undoPetChanges} onOpenSettings={()=>setConnection(true)}/>"
+      }
+    ]
+  },
+  "pet": {
+    "selected": [
+      {
+        "start": 39123,
+        "end": 39370,
+        "selectors": [
+          ".luma-pet"
+        ]
+      },
+      {
+        "start": 39370,
+        "end": 39425,
+        "selectors": [
+          ".luma-pet-hidden"
+        ]
+      },
+      {
+        "start": 39425,
+        "end": 39552,
+        "selectors": [
+          ".luma-pet-wander"
+        ]
+      },
+      {
+        "start": 39552,
+        "end": 39618,
+        "selectors": [
+          ".luma-pet-menu-open .luma-pet-wander"
+        ]
+      },
+      {
+        "start": 39618,
+        "end": 39762,
+        "selectors": [
+          ".luma-pet-trigger"
+        ]
+      },
+      {
+        "start": 39762,
+        "end": 39811,
+        "selectors": [
+          ".luma-pet-trigger:hover"
+        ]
+      },
+      {
+        "start": 39811,
+        "end": 39913,
+        "selectors": [
+          ".luma-pet-trigger:focus-visible"
+        ]
+      },
+      {
+        "start": 39913,
+        "end": 39967,
+        "selectors": [
+          ".luma-pet-menu-open .luma-pet-trigger"
+        ]
+      },
+      {
+        "start": 39967,
+        "end": 40439,
+        "selectors": [
+          ".luma-pet-thought"
+        ]
+      },
+      {
+        "start": 40439,
+        "end": 40703,
+        "selectors": [
+          ".luma-pet-thought::before",
+          ".luma-pet-thought::after"
+        ]
+      },
+      {
+        "start": 40703,
+        "end": 40798,
+        "selectors": [
+          ".luma-pet-thought::before"
+        ]
+      },
+      {
+        "start": 40798,
+        "end": 40890,
+        "selectors": [
+          ".luma-pet-thought::after"
+        ]
+      },
+      {
+        "start": 40890,
+        "end": 41029,
+        "selectors": [
+          ".luma-pet-thought-head"
+        ]
+      },
+      {
+        "start": 41029,
+        "end": 41179,
+        "selectors": [
+          ".luma-pet-thought-head button"
+        ]
+      },
+      {
+        "start": 41179,
+        "end": 41235,
+        "selectors": [
+          ".luma-pet-thought-head button:hover"
+        ]
+      },
+      {
+        "start": 41235,
+        "end": 41341,
+        "selectors": [
+          ".luma-pet-thought p"
+        ]
+      },
+      {
+        "start": 41341,
+        "end": 41381,
+        "selectors": [
+          ".luma-pet-thought strong"
+        ]
+      },
+      {
+        "start": 41381,
+        "end": 41776,
+        "selectors": [
+          ".luma-pet-freedom"
+        ]
+      },
+      {
+        "start": 41776,
+        "end": 41875,
+        "selectors": [
+          ".luma-pet-freedom:hover:not(:disabled)"
+        ]
+      },
+      {
+        "start": 41875,
+        "end": 41915,
+        "selectors": [
+          ".luma-pet-freedom:disabled"
+        ]
+      },
+      {
+        "start": 41915,
+        "end": 41979,
+        "selectors": [
+          ".luma-pet-thought .luma-pet-scope"
+        ]
+      },
+      {
+        "start": 41979,
+        "end": 42086,
+        "selectors": [
+          ".luma-pet-thought .luma-pet-feedback"
+        ]
+      },
+      {
+        "start": 42086,
+        "end": 42163,
+        "selectors": [
+          ".luma-pet-thought .luma-pet-feedback.error"
+        ]
+      },
+      {
+        "start": 42163,
+        "end": 42387,
+        "selectors": [
+          ".luma-pet-link"
+        ]
+      },
+      {
+        "start": 42387,
+        "end": 42590
+      },
+      {
+        "start": 42590,
+        "end": 42707
+      },
+      {
+        "start": 42707,
+        "end": 42992
+      },
+      {
+        "start": 42992,
+        "end": 43182
+      },
+      {
+        "start": 43182,
+        "end": 43365,
+        "selectors": [
+          ".luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 43365,
+        "end": 43469,
+        "selectors": [
+          ".luma-pet-sprite img"
+        ]
+      },
+      {
+        "start": 43469,
+        "end": 43560,
+        "selectors": [
+          ".luma-pet-part",
+          ".luma-pet-head"
+        ]
+      },
+      {
+        "start": 43560,
+        "end": 43653,
+        "selectors": [
+          ".luma-pet-head"
+        ]
+      },
+      {
+        "start": 43653,
+        "end": 43700,
+        "selectors": [
+          ".luma-pet-head-art"
+        ]
+      },
+      {
+        "start": 43700,
+        "end": 43767,
+        "selectors": [
+          ".luma-pet-body"
+        ]
+      },
+      {
+        "start": 43767,
+        "end": 43908,
+        "selectors": [
+          ".luma-pet-arm-left"
+        ]
+      },
+      {
+        "start": 43908,
+        "end": 44057,
+        "selectors": [
+          ".luma-pet-arm-right"
+        ]
+      },
+      {
+        "start": 44057,
+        "end": 44107,
+        "selectors": [
+          ".luma-pet-arm-left",
+          ".luma-pet-arm-right"
+        ]
+      },
+      {
+        "start": 44107,
+        "end": 44231,
+        "selectors": [
+          ".luma-pet-leg-left"
+        ]
+      },
+      {
+        "start": 44231,
+        "end": 44357,
+        "selectors": [
+          ".luma-pet-leg-right"
+        ]
+      },
+      {
+        "start": 44357,
+        "end": 44495,
+        "selectors": [
+          ".luma-pet-face"
+        ]
+      },
+      {
+        "start": 44495,
+        "end": 44592,
+        "selectors": [
+          ".luma-pet-happy .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 44592,
+        "end": 44719,
+        "selectors": [
+          ".luma-pet-happy .luma-pet-head",
+          ".luma-pet-happy .luma-pet-arm-left",
+          ".luma-pet-happy .luma-pet-arm-right"
+        ]
+      },
+      {
+        "start": 44719,
+        "end": 44802,
+        "selectors": [
+          ".luma-pet-thinking .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 44802,
+        "end": 44883,
+        "selectors": [
+          ".luma-pet-working .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 44883,
+        "end": 44959,
+        "selectors": [
+          ".luma-pet-sad .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 44959,
+        "end": 45046,
+        "selectors": [
+          ".luma-pet-surprised .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 45046,
+        "end": 45125,
+        "selectors": [
+          ".luma-pet-sleepy .luma-pet-sprite"
+        ]
+      },
+      {
+        "start": 45125,
+        "end": 45175,
+        "selectors": [
+          ".luma-pet-sleepy .luma-pet-wander"
+        ]
+      },
+      {
+        "start": 45175,
+        "end": 45352,
+        "selectors": [
+          ".luma-pet:is(.luma-pet-sleepy,.luma-pet-sad,.luma-pet-thinking,.luma-pet-working,.luma-pet-surprised) :is(.luma-pet-arm-left,.luma-pet-arm-right,.luma-pet-head)"
+        ]
+      },
+      {
+        "start": 45352,
+        "end": 45425,
+        "selectors": [
+          ".luma-pet-sleepy .luma-pet-head"
+        ]
+      },
+      {
+        "start": 45425,
+        "end": 45566,
+        "selectors": [
+          ".luma-pet-menu-open :is(.luma-pet-leg-left,.luma-pet-leg-right)",
+          ".luma-pet-sleepy :is(.luma-pet-leg-left,.luma-pet-leg-right)"
+        ]
+      },
+      {
+        "start": 45566,
+        "end": 45872
+      },
+      {
+        "start": 45872,
+        "end": 46069
+      },
+      {
+        "start": 46069,
+        "end": 46220
+      },
+      {
+        "start": 46220,
+        "end": 46371
+      },
+      {
+        "start": 46371,
+        "end": 46615
+      },
+      {
+        "start": 46615,
+        "end": 46860
+      },
+      {
+        "start": 46860,
+        "end": 46975
+      },
+      {
+        "start": 46975,
+        "end": 47123
+      },
+      {
+        "start": 47123,
+        "end": 47236
+      },
+      {
+        "start": 47236,
+        "end": 47348
+      },
+      {
+        "start": 47348,
+        "end": 47484
+      },
+      {
+        "start": 47484,
+        "end": 47652
+      },
+      {
+        "start": 47652,
+        "end": 47766
+      },
+      {
+        "start": 47790,
+        "end": 47883,
+        "selectors": [
+          ".luma-pet"
+        ]
+      },
+      {
+        "start": 47882,
+        "end": 47926,
+        "selectors": [
+          ".luma-pet-thought"
+        ]
+      },
+      {
+        "start": 47965,
+        "end": 48042,
+        "selectors": [
+          ".luma-pet *",
+          ".luma-pet *::before",
+          ".luma-pet *::after"
+        ]
+      },
+      {
+        "start": 48041,
+        "end": 48086,
+        "selectors": [
+          ".luma-pet",
+          ".luma-pet-freedom"
+        ]
+      },
+      {
+        "start": 55458,
+        "end": 55670,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought"
+        ]
+      },
+      {
+        "start": 55670,
+        "end": 55864,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought::before",
+          "[data-luma-theme=dark] .luma-pet-thought::after"
+        ]
+      },
+      {
+        "start": 55864,
+        "end": 55973,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought-head",
+          "[data-luma-theme=dark] .luma-pet-thought strong"
+        ]
+      },
+      {
+        "start": 55973,
+        "end": 56088,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought p",
+          "[data-luma-theme=dark] .luma-pet-thought .luma-pet-scope"
+        ]
+      },
+      {
+        "start": 56088,
+        "end": 56156,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought-head button"
+        ]
+      },
+      {
+        "start": 56156,
+        "end": 56309,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought-head button:hover",
+          "[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback"
+        ]
+      },
+      {
+        "start": 56309,
+        "end": 56409,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback.error"
+        ]
+      },
+      {
+        "start": 56409,
+        "end": 56549,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-freedom"
+        ]
+      },
+      {
+        "start": 56549,
+        "end": 56602,
+        "selectors": [
+          "[data-luma-theme=dark] .luma-pet-link"
+        ]
+      }
+    ]
+  },
+  "support": {
+    "selected": [
+      {
+        "start": 9732,
+        "end": 9895,
+        "selectors": [
+          ".icon-button"
+        ]
+      },
+      {
+        "start": 9894,
+        "end": 9949,
+        "selectors": [
+          ".icon-button:hover"
+        ]
+      },
+      {
+        "start": 11434,
+        "end": 11556,
+        "selectors": [
+          ".text-button"
+        ]
+      },
+      {
+        "start": 11555,
+        "end": 11594,
+        "selectors": [
+          ".text-button:hover"
+        ]
+      },
+      {
+        "start": 13129,
+        "end": 13187,
+        "selectors": [
+          ".focus-empty>.soft-button"
+        ]
+      },
+      {
+        "start": 13186,
+        "end": 13363,
+        "selectors": [
+          ".primary",
+          ".soft-button"
+        ]
+      },
+      {
+        "start": 13362,
+        "end": 13474,
+        "selectors": [
+          ".primary"
+        ]
+      },
+      {
+        "start": 13473,
+        "end": 13549,
+        "selectors": [
+          ".soft-button"
+        ]
+      },
+      {
+        "start": 13548,
+        "end": 13588,
+        "selectors": [
+          ".primary:hover"
+        ]
+      },
+      {
+        "start": 19248,
+        "end": 19291,
+        "selectors": [
+          ".spin"
+        ]
+      },
+      {
+        "start": 19290,
+        "end": 19336
+      },
+      {
+        "start": 19990,
+        "end": 20227,
+        "selectors": [
+          ".form-stack input",
+          ".form-stack textarea"
+        ]
+      },
+      {
+        "start": 20547,
+        "end": 20623,
+        "selectors": [
+          ".control-note"
+        ]
+      },
+      {
+        "start": 20738,
+        "end": 20780,
+        "selectors": [
+          ".section-setting .icon-button"
+        ]
+      },
+      {
+        "start": 20825,
+        "end": 21034,
+        "selectors": [
+          ".form-dialog"
+        ]
+      },
+      {
+        "start": 21033,
+        "end": 21160,
+        "selectors": [
+          ".form-dialog [data-slot=dialog-title]"
+        ]
+      },
+      {
+        "start": 21159,
+        "end": 21292,
+        "selectors": [
+          ".form-dialog [data-slot=dialog-description]"
+        ]
+      },
+      {
+        "start": 21291,
+        "end": 21363,
+        "selectors": [
+          ".form-stack"
+        ]
+      },
+      {
+        "start": 21362,
+        "end": 21410,
+        "selectors": [
+          ".form-stack label"
+        ]
+      },
+      {
+        "start": 21475,
+        "end": 21577,
+        "selectors": [
+          ".form-stack [data-slot=select-trigger]"
+        ]
+      },
+      {
+        "start": 22353,
+        "end": 22460,
+        "selectors": [
+          ".ai-error"
+        ]
+      },
+      {
+        "start": 22459,
+        "end": 22506,
+        "selectors": [
+          ".ai-error button"
+        ]
+      },
+      {
+        "start": 24375,
+        "end": 24419,
+        "selectors": [
+          ".focus-empty>.soft-button"
+        ]
+      },
+      {
+        "start": 24652,
+        "end": 24738,
+        "selectors": [
+          ".view-heading .primary"
+        ]
+      },
+      {
+        "start": 25586,
+        "end": 25786,
+        "selectors": [
+          ".primary",
+          ".soft-button",
+          ".form-stack label",
+          ".text-button"
+        ]
+      },
+      {
+        "start": 25785,
+        "end": 25907,
+        "selectors": [
+          ".connection-info .control-note"
+        ]
+      },
+      {
+        "start": 26460,
+        "end": 26490,
+        "selectors": [
+          ".control-note"
+        ]
+      },
+      {
+        "start": 27028,
+        "end": 27274,
+        "selectors": [
+          ".question-input"
+        ]
+      },
+      {
+        "start": 27403,
+        "end": 27453,
+        "selectors": [
+          ".ai-dialog .control-note"
+        ]
+      },
+      {
+        "start": 27452,
+        "end": 27495,
+        "selectors": [
+          ".ai-dialog a.primary"
+        ]
+      },
+      {
+        "start": 27495,
+        "end": 27584,
+        "selectors": [
+          ".puter-controls",
+          ".puter-generate"
+        ]
+      },
+      {
+        "start": 27583,
+        "end": 27684,
+        "selectors": [
+          ".puter-controls [data-slot=select-trigger]"
+        ]
+      },
+      {
+        "start": 27683,
+        "end": 27783,
+        "selectors": [
+          ".puter-controls [data-slot=select-value]"
+        ]
+      },
+      {
+        "start": 27782,
+        "end": 27925,
+        "selectors": [
+          ".puter-controls .control-note",
+          ".puter-generate .control-note",
+          ".puter-dialog .control-note"
+        ]
+      },
+      {
+        "start": 27924,
+        "end": 28040,
+        "selectors": [
+          ".puter-account"
+        ]
+      },
+      {
+        "start": 28039,
+        "end": 28084,
+        "selectors": [
+          ".puter-context"
+        ]
+      },
+      {
+        "start": 28083,
+        "end": 28136,
+        "selectors": [
+          ".puter-context summary"
+        ]
+      },
+      {
+        "start": 28135,
+        "end": 28183,
+        "selectors": [
+          ".puter-dialog"
+        ]
+      },
+      {
+        "start": 28243,
+        "end": 28286,
+        "selectors": [
+          ".ai-dialog .question-input"
+        ]
+      },
+      {
+        "start": 28342,
+        "end": 28410,
+        "selectors": [
+          ".puter-controls .text-button"
+        ]
+      },
+      {
+        "start": 28409,
+        "end": 28455,
+        "selectors": [
+          ".puter-controls+.control-note"
+        ]
+      },
+      {
+        "start": 28454,
+        "end": 28514,
+        "selectors": [
+          ".puter-generate .primary"
+        ]
+      },
+      {
+        "start": 28514,
+        "end": 28629,
+        "selectors": [
+          ".ai-connection-settings",
+          ".openai-settings",
+          ".openai-key-form"
+        ]
+      },
+      {
+        "start": 28628,
+        "end": 28737,
+        "selectors": [
+          ".ai-connection-settings [data-slot=select-trigger]"
+        ]
+      },
+      {
+        "start": 28736,
+        "end": 28844,
+        "selectors": [
+          ".ai-connection-settings [data-slot=select-value]"
+        ]
+      },
+      {
+        "start": 28843,
+        "end": 28904,
+        "selectors": [
+          ".ai-provider-fields"
+        ]
+      },
+      {
+        "start": 28903,
+        "end": 29068,
+        "selectors": [
+          ".openai-key-form input"
+        ]
+      },
+      {
+        "start": 29067,
+        "end": 29155,
+        "selectors": [
+          ".openai-key-form input:focus-visible"
+        ]
+      },
+      {
+        "start": 29154,
+        "end": 29204,
+        "selectors": [
+          ".openai-key-form .primary"
+        ]
+      },
+      {
+        "start": 29203,
+        "end": 29301,
+        "selectors": [
+          ".openai-key-status",
+          ".ai-connection-loading"
+        ]
+      },
+      {
+        "start": 29300,
+        "end": 29334,
+        "selectors": [
+          ".openai-key-status"
+        ]
+      },
+      {
+        "start": 29333,
+        "end": 29391,
+        "selectors": [
+          ".openai-key-actions"
+        ]
+      },
+      {
+        "start": 29390,
+        "end": 29443,
+        "selectors": [
+          ".ai-connection-settings .text-button"
+        ]
+      },
+      {
+        "start": 29442,
+        "end": 29514,
+        "selectors": [
+          ".ai-connection-settings button:disabled"
+        ]
+      },
+      {
+        "start": 29513,
+        "end": 29614,
+        "selectors": [
+          "[data-luma-theme=dark] .openai-key-form input"
+        ]
+      },
+      {
+        "start": 29613,
+        "end": 29708,
+        "selectors": [
+          "[data-luma-theme=dark] .openai-key-status",
+          "[data-luma-theme=dark] .puter-account"
+        ]
+      },
+      {
+        "start": 29707,
+        "end": 29773,
+        "selectors": [
+          "[data-luma-theme=dark] .puter-dialog .control-note"
+        ]
+      },
+      {
+        "start": 29773,
+        "end": 30070,
+        "selectors": [
+          ".inline-ai"
+        ]
+      },
+      {
+        "start": 30069,
+        "end": 30195,
+        "selectors": [
+          ".inline-ai-heading"
+        ]
+      },
+      {
+        "start": 30194,
+        "end": 30259,
+        "selectors": [
+          ".inline-ai-heading>span"
+        ]
+      },
+      {
+        "start": 30258,
+        "end": 30306,
+        "selectors": [
+          ".inline-ai .icon-button"
+        ]
+      },
+      {
+        "start": 30305,
+        "end": 30352,
+        "selectors": [
+          ".inline-ai [cmdk-root]"
+        ]
+      },
+      {
+        "start": 30351,
+        "end": 30429,
+        "selectors": [
+          ".inline-ai [cmdk-item]"
+        ]
+      },
+      {
+        "start": 30428,
+        "end": 30475,
+        "selectors": [
+          ".inline-ai [cmdk-input-wrapper]"
+        ]
+      },
+      {
+        "start": 30474,
+        "end": 30526,
+        "selectors": [
+          ".inline-ai [cmdk-input]"
+        ]
+      },
+      {
+        "start": 30525,
+        "end": 30589,
+        "selectors": [
+          ".inline-ai .question-input"
+        ]
+      },
+      {
+        "start": 30588,
+        "end": 30665,
+        "selectors": [
+          ".inline-ai .primary",
+          ".inline-ai .soft-button"
+        ]
+      },
+      {
+        "start": 30664,
+        "end": 30734,
+        "selectors": [
+          ".inline-ai .control-note"
+        ]
+      },
+      {
+        "start": 30733,
+        "end": 30789,
+        "selectors": [
+          ".inline-ai .text-button"
+        ]
+      },
+      {
+        "start": 30788,
+        "end": 30852,
+        "selectors": [
+          ".inline-ai .dialog-buttons"
+        ]
+      },
+      {
+        "start": 30851,
+        "end": 31034,
+        "selectors": [
+          ".inline-ai-answer"
+        ]
+      },
+      {
+        "start": 31033,
+        "end": 31083,
+        "selectors": [
+          ".inline-ai .ai-error"
+        ]
+      },
+      {
+        "start": 31082,
+        "end": 31118,
+        "selectors": [
+          ".inline-ai .puter-generate"
+        ]
+      },
+      {
+        "start": 31118,
+        "end": 31223,
+        "selectors": [
+          ".inline-ai-loading"
+        ]
+      },
+      {
+        "start": 31222,
+        "end": 31297,
+        "selectors": [
+          ".inline-ai-actions"
+        ]
+      },
+      {
+        "start": 31296,
+        "end": 31346,
+        "selectors": [
+          ".inline-ai-actions .text-button"
+        ]
+      },
+      {
+        "start": 31346,
+        "end": 31625,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex"
+        ]
+      },
+      {
+        "start": 31625,
+        "end": 31787,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex::before",
+          ".inline-ai [cmdk-item].inline-ai-codex::after"
+        ]
+      },
+      {
+        "start": 31787,
+        "end": 32145,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex::before"
+        ]
+      },
+      {
+        "start": 32145,
+        "end": 32465,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex::after"
+        ]
+      },
+      {
+        "start": 32465,
+        "end": 32611,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex[data-selected=true]"
+        ]
+      },
+      {
+        "start": 32611,
+        "end": 32736,
+        "selectors": [
+          ".inline-ai .inline-ai-codex .codex-mark"
+        ]
+      },
+      {
+        "start": 32736,
+        "end": 32830
+      },
+      {
+        "start": 32830,
+        "end": 33076
+      },
+      {
+        "start": 33114,
+        "end": 33223,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex::before",
+          ".inline-ai [cmdk-item].inline-ai-codex::after"
+        ]
+      },
+      {
+        "start": 33222,
+        "end": 33282,
+        "selectors": [
+          ".inline-ai [cmdk-item].inline-ai-codex::after"
+        ]
+      },
+      {
+        "start": 33509,
+        "end": 33669,
+        "selectors": [
+          "[data-slot=\"popover-content\"].inline-ai"
+        ]
+      },
+      {
+        "start": 49890,
+        "end": 50170,
+        "selectors": [
+          "[data-luma-theme=dark] .soft-button"
+        ]
+      },
+      {
+        "start": 50784,
+        "end": 51265,
+        "selectors": [
+          "[data-luma-theme=dark] :is(.workspace-name,.sidebar-bottom,.sidebar-add,.breadcrumb,.save-status,.icon-button,.date-label,.text-button,.intro-row p,.quick-card small,.page-card p,.page-card-bottom,.project-mini p,.project-description,.project-meta,.focus-empty p,.subtle-help,.page-properties,.add-block,.task-date,.board-add,.control-note,.empty-state,.home-footer,.sidebar-profile div>span,.sidebar-section,.new-page-card,.new-page-card span,.new-page-card small)"
+        ]
+      },
+      {
+        "start": 51265,
+        "end": 51443,
+        "selectors": [
+          "[data-luma-theme=dark] .icon-button:hover"
+        ]
+      },
+      {
+        "start": 51991,
+        "end": 52089,
+        "selectors": [
+          "[data-luma-theme=dark] .primary"
+        ]
+      },
+      {
+        "start": 52089,
+        "end": 52386,
+        "selectors": [
+          "[data-luma-theme=dark] .form-dialog"
+        ]
+      },
+      {
+        "start": 52386,
+        "end": 52662,
+        "selectors": [
+          "[data-luma-theme=dark] :is(.design-controls input,.form-stack input,.form-stack textarea,.ai-question input,.question-input,.handoff-response,.handoff-prompt,.inline-ai-answer,.stock-search-label,.page-icon-picker input)"
+        ]
+      },
+      {
+        "start": 52733,
+        "end": 52960,
+        "selectors": [
+          "[data-luma-theme=dark] .form-stack label",
+          "[data-luma-theme=dark] .puter-context"
+        ]
+      },
+      {
+        "start": 53543,
+        "end": 53665,
+        "selectors": [
+          "[data-luma-theme=dark] .ai-error"
+        ]
+      },
+      {
+        "start": 53665,
+        "end": 53830,
+        "selectors": [
+          "[data-luma-theme=dark] [data-slot=popover-content].inline-ai"
+        ]
+      },
+      {
+        "start": 53830,
+        "end": 53929,
+        "selectors": [
+          "[data-luma-theme=dark] .inline-ai-heading",
+          "[data-luma-theme=dark] .inline-ai-loading"
+        ]
+      },
+      {
+        "start": 53929,
+        "end": 54046,
+        "selectors": [
+          "[data-luma-theme=dark] .inline-ai [cmdk-item].inline-ai-codex"
+        ]
+      },
+      {
+        "start": 54046,
+        "end": 54336,
+        "selectors": [
+          "[data-luma-theme=dark] .inline-ai [cmdk-item].inline-ai-codex::before"
+        ]
+      },
+      {
+        "start": 54336,
+        "end": 54622,
+        "selectors": [
+          "[data-luma-theme=dark] .inline-ai [cmdk-item].inline-ai-codex::after"
+        ]
+      }
+    ]
+  }
+}
