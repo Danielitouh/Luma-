@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "original_files_byte_identical": 31,
+    "integration_excerpts_byte_verified": 35,
+    "pet_and_codex_animation_keyframes_preserved": 19,
+    "existing_mock_test_files_passed": 5,
+    "missing_local_imports": 0,
+    "hosted_entrypoint_included": false
+  },
+  "source_commit": "b079dbde056593789c50d2c3822467b41bc4cdf7"
+}
