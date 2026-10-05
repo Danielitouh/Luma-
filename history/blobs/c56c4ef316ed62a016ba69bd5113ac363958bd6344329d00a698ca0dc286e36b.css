@@ -1,0 +1,55 @@
+.luma-pet{position:fixed;right:20px;bottom:calc(22px + env(safe-area-inset-bottom));width:96px;height:111px;z-index:20;pointer-events:none;user-select:none;filter:drop-shadow(0 8px 12px #233f7333);transition:opacity .25s ease,transform .25s ease}
+.luma-pet-hidden{opacity:0;transform:translateY(18px)}
+.luma-pet-wander{position:relative;width:100%;height:100%;animation:pet-wander 17s ease-in-out infinite;will-change:transform}
+.luma-pet-menu-open .luma-pet-wander{animation-play-state:paused}
+.luma-pet-trigger{display:block;width:100%;height:100%;border:0;background:transparent;padding:0;pointer-events:auto;touch-action:manipulation;animation:pet-footsteps .55s ease-in-out infinite}
+.luma-pet-trigger:hover{filter:brightness(1.12)}
+.luma-pet-trigger:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:22px}
+.luma-pet-menu-open .luma-pet-trigger{animation:none}
+.luma-pet-thought{position:absolute;right:0;bottom:calc(100% + 30px);width:min(292px,calc(100vw - 26px));padding:20px 18px;border:1.5px solid #d7e1ed;border-radius:42% 48% 45% 39% / 18% 20% 22% 19%;background:radial-gradient(circle at 20% 10%,#fff 0,#f8fbff 52%,#edf5ff 100%);box-shadow:inset 0 2px 3px #fff,0 17px 42px #1d2f5145;pointer-events:auto;color:#303949;user-select:text;transform-origin:88% 110%;animation:pet-thought-pop .58s cubic-bezier(.18,.75,.27,1) both}
+.luma-pet-thought::before,.luma-pet-thought::after{content:"";position:absolute;border-radius:50%;background:#f0f7ff;border:1.5px solid #d7e1ed;box-shadow:inset 1px 2px 2px #fff,0 4px 9px #1d2f5122;animation:pet-thought-orbit .5s cubic-bezier(.18,.75,.27,1) both}
+.luma-pet-thought::before{right:24px;bottom:-18px;width:18px;height:18px;animation-delay:.08s}
+.luma-pet-thought::after{right:16px;bottom:-32px;width:9px;height:9px;animation-delay:.16s}
+.luma-pet-thought-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:700;color:#26334b}
+.luma-pet-thought-head button{display:grid;place-items:center;width:27px;height:27px;border:0;border-radius:8px;background:transparent;color:#67788d}
+.luma-pet-thought-head button:hover{background:#eaf0f5}
+.luma-pet-thought p{margin:10px 0 0;font-size:13px;line-height:1.45;color:#5a6879;overflow-wrap:anywhere}
+.luma-pet-thought strong{color:#283951}
+.luma-pet-freedom{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:42px;margin-top:13px;padding:8px 10px;border:1px solid #7863a0;border-radius:12px;background:linear-gradient(115deg,#d7e9ff,#e7d9f7 55%,#f4d9da);color:#33435d;font-size:13px;font-weight:700;box-shadow:0 5px 14px #3a527529;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.luma-pet-freedom:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 9px 20px #3a52753b}
+.luma-pet-freedom:disabled{opacity:.65}
+.luma-pet-thought .luma-pet-scope{font-size:12px;color:#69798b}
+.luma-pet-thought .luma-pet-feedback{padding:8px 10px;border-radius:10px;background:#edf3f8;color:#43536b}
+.luma-pet-thought .luma-pet-feedback.error{background:#f9eeeb;color:#9e4d40}
+.luma-pet-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:4px 2px;border:0;background:transparent;color:#6a5c86;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+@keyframes pet-wander{0%,12%{transform:translate3d(0,0,0)}33%,44%{transform:translate3d(max(-155px,-22vw),0,0)}64%,74%{transform:translate3d(max(-76px,-11vw),0,0)}93%,100%{transform:translate3d(0,0,0)}}
+@keyframes pet-footsteps{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(1deg)}}
+@keyframes pet-thought-pop{0%{opacity:0;transform:translateY(22px) scale(.38,.35)}48%{opacity:1;transform:translateY(-5px) scale(1.065,.94)}70%{transform:translateY(2px) scale(.965,1.04)}86%{transform:translateY(-1px) scale(1.015,.99)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pet-thought-orbit{0%{opacity:0;transform:translate(9px,12px) scale(.1)}65%{opacity:1;transform:translate(-2px,-3px) scale(1.18)}100%{opacity:1;transform:translate(0,0) scale(1)}}
+.luma-pet-sprite{position:relative;display:block;width:100%;height:100%;transform-origin:50% 85%;animation:pet-breathe 3.8s ease-in-out infinite;will-change:transform}
+.luma-pet-sprite img{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.luma-pet-face{position:absolute;left:28%;top:37%;width:44%;height:13%;fill:#79f5ff;filter:drop-shadow(0 0 2px #56d7f4);overflow:visible}
+.luma-pet-happy .luma-pet-sprite{animation:pet-hop .66s cubic-bezier(.22,.72,.28,1) infinite}
+.luma-pet-thinking .luma-pet-sprite{animation:pet-think 2.4s ease-in-out infinite}
+.luma-pet-working .luma-pet-sprite{animation:pet-work .62s ease-in-out infinite}
+.luma-pet-sad .luma-pet-sprite{animation:pet-sad 2.3s ease-in-out infinite}
+.luma-pet-surprised .luma-pet-sprite{animation:pet-surprise .48s ease-in-out infinite}
+.luma-pet-sleepy .luma-pet-sprite{animation:pet-sleep 3s ease-in-out infinite}
+@keyframes pet-breathe{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.015,.992)}}
+@keyframes pet-hop{0%,100%{transform:translateY(0) scale(1.03,.97)}48%{transform:translateY(-10px) scale(.98,1.04)}72%{transform:translateY(-3px)}}
+@keyframes pet-think{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(3deg) translateY(-4px)}}
+@keyframes pet-work{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(2deg)}}
+@keyframes pet-sad{0%,100%{transform:translateY(3px) rotate(1deg) scaleY(.97)}50%{transform:translateY(5px) rotate(-1deg) scaleY(.95)}}
+@keyframes pet-surprise{0%,100%{transform:scale(1)}50%{transform:scale(1.065) translateY(-3px)}}
+@keyframes pet-sleep{0%,100%{transform:translateY(2px) rotate(-2deg)}50%{transform:translateY(4px) rotate(2deg)}}
+@media(max-width:767px){.luma-pet{right:10px;bottom:calc(84px + env(safe-area-inset-bottom));width:76px;height:88px}.luma-pet-thought{bottom:calc(100% + 31px)}}
+@media(prefers-reduced-motion:reduce){.luma-pet-sprite,.luma-pet-wander,.luma-pet-trigger,.luma-pet-thought{animation:none!important}.luma-pet,.luma-pet-freedom{transition:none}}
+[data-luma-theme=dark] .luma-pet-thought{background:radial-gradient(circle at 18% 9%,#34445a 0,#26364a 55%,#202c3b 100%);border-color:#5d7390;color:#e9f1fa;box-shadow:inset 0 2px 4px #ffffff16,0 17px 45px #000a}
+[data-luma-theme=dark] .luma-pet-thought::before,[data-luma-theme=dark] .luma-pet-thought::after{background:#25354a;border-color:#5d7390;box-shadow:inset 1px 1px 3px #ffffff1a,0 4px 10px #0006}
+[data-luma-theme=dark] .luma-pet-thought-head,[data-luma-theme=dark] .luma-pet-thought strong{color:#f0f4fb}
+[data-luma-theme=dark] .luma-pet-thought p,[data-luma-theme=dark] .luma-pet-thought .luma-pet-scope{color:#b4c4d6}
+[data-luma-theme=dark] .luma-pet-thought-head button{color:#c2d1df}
+[data-luma-theme=dark] .luma-pet-thought-head button:hover,[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback{background:#314253;color:#dde9f4}
+[data-luma-theme=dark] .luma-pet-thought .luma-pet-feedback.error{background:#493839;color:#ffc4b9}
+[data-luma-theme=dark] .luma-pet-freedom{background:linear-gradient(115deg,#334967,#513f64 56%,#60404c);border-color:#7d6d95;color:#f3effb}
+[data-luma-theme=dark] .luma-pet-link{color:#cbb5ea}
