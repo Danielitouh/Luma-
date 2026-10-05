@@ -1,0 +1,1418 @@
+[
+  {
+    "source": {
+      "git_commit": "ba25920b39eea2dd8b22260dee4b2742bb945173"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c",
+        "stored_as": "history/blobs/f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "e2d867926bb908c2411d130521d0155136a1aada14a1bba6023f1d18efd77c00",
+        "stored_as": "history/blobs/e2d867926bb908c2411d130521d0155136a1aada14a1bba6023f1d18efd77c00.fragment"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4",
+        "stored_as": "history/blobs/6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "stored_as": "history/blobs/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.css"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a",
+        "stored_as": "history/blobs/7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "dd6523da7a4625064afc4c939a78477ac6727757"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c",
+        "stored_as": "history/blobs/f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "0c3ac9e6e489169ce979d81b1103c9dd29434b66f0867cd4d5e607c5e64dec88",
+        "stored_as": "history/blobs/0c3ac9e6e489169ce979d81b1103c9dd29434b66f0867cd4d5e607c5e64dec88.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "655d9acf444c62d8f43a81e5554f79d2af43a2afe4213ce7257002f705fe790f",
+        "stored_as": "history/blobs/655d9acf444c62d8f43a81e5554f79d2af43a2afe4213ce7257002f705fe790f.fragment"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4",
+        "stored_as": "history/blobs/6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a",
+        "stored_as": "history/blobs/7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "7789d95869ae124b2d9ad780b2a9e8af13c102de"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c",
+        "stored_as": "history/blobs/f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "e477fa3b10bb6c59b3ef1dcc2890b80ffedb787a79ffb451d16d452f29233e7d",
+        "stored_as": "history/blobs/e477fa3b10bb6c59b3ef1dcc2890b80ffedb787a79ffb451d16d452f29233e7d.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "655d9acf444c62d8f43a81e5554f79d2af43a2afe4213ce7257002f705fe790f",
+        "stored_as": "history/blobs/655d9acf444c62d8f43a81e5554f79d2af43a2afe4213ce7257002f705fe790f.fragment"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4",
+        "stored_as": "history/blobs/6679f4af1f2bfa76b7af657f4c2b8ca81af29d85748f991a8abcb33e09db60c4.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a",
+        "stored_as": "history/blobs/7cc1aa826fb366edcb3ce21fc90b711180b7f1600f542c7a507e94f5730f377a.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "6b6bf6aeccda96ebcce60a5dae5c8e2c7e966ca1"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c",
+        "stored_as": "history/blobs/f492a8ad37a69c8b107298bfaf0f99bfd835655910d40d5c10bc8d940f353d7c.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32",
+        "stored_as": "history/blobs/03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "c4b49759584a1b93f65981651d4f5ac2ba2f1dd9de842532fd6fee0420f51422",
+        "stored_as": "history/blobs/c4b49759584a1b93f65981651d4f5ac2ba2f1dd9de842532fd6fee0420f51422.fragment"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "ed57012b0ae165c66961a1c9b3b8695684db12e39694591dddda0b119776ca42",
+        "stored_as": "history/blobs/ed57012b0ae165c66961a1c9b3b8695684db12e39694591dddda0b119776ca42.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "29b7f063f307d03877b06e647ab10d86b35f41c790200392dea2166b452a4cae",
+        "stored_as": "history/blobs/29b7f063f307d03877b06e647ab10d86b35f41c790200392dea2166b452a4cae.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "9abb324454eb2d43a694603adf1aa42ed634a541"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "7454f3fabce4682743df06c25cfdd17a74a1a66fa5e2e3b1b7b6e12437793a2c",
+        "stored_as": "history/blobs/7454f3fabce4682743df06c25cfdd17a74a1a66fa5e2e3b1b7b6e12437793a2c.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32",
+        "stored_as": "history/blobs/03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "9ed014e0e2596bf3fbfe9339dd0abc7c6534b3684ab632f675a64355c1b89a72",
+        "stored_as": "history/blobs/9ed014e0e2596bf3fbfe9339dd0abc7c6534b3684ab632f675a64355c1b89a72.fragment"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344",
+        "stored_as": "history/blobs/472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988",
+        "stored_as": "history/blobs/789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c",
+        "stored_as": "history/blobs/de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "9c97195b0d2345c81b0b31a43f60eb0d1872737c"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "1393efeb5429abe43085996cb84d4fe9ed41fed9b71956d599b24ce0d6010687",
+        "stored_as": "history/blobs/1393efeb5429abe43085996cb84d4fe9ed41fed9b71956d599b24ce0d6010687.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32",
+        "stored_as": "history/blobs/03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "ece53ea794ed5c00b51434de3b596c6e71839eb895e52030b2e1ebcfb12fa1c8",
+        "stored_as": "history/blobs/ece53ea794ed5c00b51434de3b596c6e71839eb895e52030b2e1ebcfb12fa1c8.fragment"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344",
+        "stored_as": "history/blobs/472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988",
+        "stored_as": "history/blobs/789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249",
+        "stored_as": "history/blobs/af3716364d21bf223def856d1729a97db13e725cac44a9d84d1ae60187aa3249.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c",
+        "stored_as": "history/blobs/de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "7bcd18b949fb1385004a47b0fbc1caa3c20c2f91"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc",
+        "stored_as": "history/blobs/522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32",
+        "stored_as": "history/blobs/03b5fdac1d49171bdb345110278d4ae3378386ad5b5c663ba7cc5ec5876aff32.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "d43d36b17a6a2686c907198f77116aff85c3ee5cca36d5c06495d12363e76f9b",
+        "stored_as": "history/blobs/d43d36b17a6a2686c907198f77116aff85c3ee5cca36d5c06495d12363e76f9b.fragment"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344",
+        "stored_as": "history/blobs/472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988",
+        "stored_as": "history/blobs/789b2fcd931db16140af5fb6adab10ad4bac1521841b4ebdb7926e4f6e78f988.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a",
+        "stored_as": "history/blobs/374c6e341766358ec89a14bd7f65f3efc57a6fc57416b1c14d73b8a375f6a76a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c",
+        "stored_as": "history/blobs/de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "094005ff875464281daaa0d5c264334c772ad95c"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc",
+        "stored_as": "history/blobs/522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "b52cf62213721430ac488911002349ce9101026586a294ab1a9f0bad9b5a4d15",
+        "stored_as": "history/blobs/b52cf62213721430ac488911002349ce9101026586a294ab1a9f0bad9b5a4d15.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "fbecac3181ddc26ecfdb2124c3111d5f1f136eb227dd8f4c5fba27dac048ca9c",
+        "stored_as": "history/blobs/fbecac3181ddc26ecfdb2124c3111d5f1f136eb227dd8f4c5fba27dac048ca9c.fragment"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344",
+        "stored_as": "history/blobs/472c0099e3c3ae783a6f702c17f79ea4821729431cdd7aff09331d1196b68344.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "45759875d5cec75af57841f6535b6537b1b90aed54fcddd82aeca0fff12a2602",
+        "stored_as": "history/blobs/45759875d5cec75af57841f6535b6537b1b90aed54fcddd82aeca0fff12a2602.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "7789f9abf3ffc2f8c601adfa262df1c69d9d0b8abdfb389c4957401acd29282a",
+        "stored_as": "history/blobs/7789f9abf3ffc2f8c601adfa262df1c69d9d0b8abdfb389c4957401acd29282a.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c",
+        "stored_as": "history/blobs/de514fcdbae65d578e2ee5f6e7556e9cd4ce926371d0146fefb9f99f9dc9c64c.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "3dfac7470ace41f4fb890389d320f37d945a0425"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc",
+        "stored_as": "history/blobs/522e288b9935677393683ded18072c1313131456084468344913e0faad50c3cc.css"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "5f267c33e35d471d239e59ceb80456e832b3d1f2e9de78b2dd87ae2b9e35f8bc",
+        "stored_as": "history/blobs/5f267c33e35d471d239e59ceb80456e832b3d1f2e9de78b2dd87ae2b9e35f8bc.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e",
+        "stored_as": "history/blobs/e3c094eeb99e8e814635f73b3e4fcc1b0550df9e31a444baf77619f6f070165e.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "fbecac3181ddc26ecfdb2124c3111d5f1f136eb227dd8f4c5fba27dac048ca9c",
+        "stored_as": "history/blobs/fbecac3181ddc26ecfdb2124c3111d5f1f136eb227dd8f4c5fba27dac048ca9c.fragment"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "3ff893f9151ce87a81d045ad2d5691ac96f4f58a99d26864d76de58c16b31a1d",
+        "stored_as": "history/blobs/3ff893f9151ce87a81d045ad2d5691ac96f4f58a99d26864d76de58c16b31a1d.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "ac6b2694e57997a69f3ebc4fcab939c2f287656190aa56481e14d6540c43f7a6",
+        "stored_as": "history/blobs/ac6b2694e57997a69f3ebc4fcab939c2f287656190aa56481e14d6540c43f7a6.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b",
+        "stored_as": "history/blobs/c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "a22f8b702a81d7c64491709326e64af4b3679252310b039978be3c4dfa2967a2",
+        "stored_as": "tests/luma-agent.test.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "ae736b13d2cf2e1df9860871622f4417510818a2"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "ad4620ab4d1bee01160ccb6c99e26fc6724de2630dc7372f1c8d702400693ed0",
+        "stored_as": "agent-interface.css"
+      },
+      "app/api/ai/generate/route.ts": {
+        "sha256": "74d52b638840e6a3df53e735fa06f5c1b5b1e40e563b7a704a0188b5652c6235",
+        "stored_as": "app/api/ai/generate/route.ts"
+      },
+      "app/api/ai/settings/route.ts": {
+        "sha256": "d58a9928835cda0cc0e68b40ef0f804a3951db1a527540028d9a117ed5c5ae1c",
+        "stored_as": "app/api/ai/settings/route.ts"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/ai-connection.tsx": {
+        "sha256": "d0ab4bc7abd59b452780f093598ba894d1cb05aaa9fea758bc04fe4c40218788",
+        "stored_as": "components/ai-connection.tsx"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "3b0e067a620321ace9a57ddee917ed00ab1995f3b729bd91aef7829c5ea1291f",
+        "stored_as": "history/blobs/3b0e067a620321ace9a57ddee917ed00ab1995f3b729bd91aef7829c5ea1291f.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/ai-connections.ts": {
+        "sha256": "43e15dbd722f0a63dacdf850c50ef6a6ec7a581a1c98e77137775574ef60fccb",
+        "stored_as": "db/ai-connections.ts"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "618668ca5f11253e25718b0ad44ffa6569b0e53c20cd0b11507bfc17b225505a",
+        "stored_as": "db/schema.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "167abad3e3c8cad74a8ef0e79c7f47ff4818d6b889889e40e71639a80e7f7d71",
+        "stored_as": "history/blobs/167abad3e3c8cad74a8ef0e79c7f47ff4818d6b889889e40e71639a80e7f7d71.fragment"
+      },
+      "lib/ai-key-crypto.ts": {
+        "sha256": "af783c1d0080d13ea969ca7e500350c49df2e77c70408909a54748d8664bfc2c",
+        "stored_as": "lib/ai-key-crypto.ts"
+      },
+      "lib/ai-provider.ts": {
+        "sha256": "0dd963566f0e79e753ab4be15b3014a7b5202db6723c71b1dcde67e253047183",
+        "stored_as": "lib/ai-provider.ts"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "3ff893f9151ce87a81d045ad2d5691ac96f4f58a99d26864d76de58c16b31a1d",
+        "stored_as": "history/blobs/3ff893f9151ce87a81d045ad2d5691ac96f4f58a99d26864d76de58c16b31a1d.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "ac6b2694e57997a69f3ebc4fcab939c2f287656190aa56481e14d6540c43f7a6",
+        "stored_as": "history/blobs/ac6b2694e57997a69f3ebc4fcab939c2f287656190aa56481e14d6540c43f7a6.ts"
+      },
+      "lib/openai-api.ts": {
+        "sha256": "75794061f6ef18f5ef946530a1a32ec8dd763ee991b33e49925ba5b7ca4d8882",
+        "stored_as": "lib/openai-api.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b",
+        "stored_as": "history/blobs/c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/ai-provider.test.mjs": {
+        "sha256": "7083266decf66a43b773cf79ecae58908658eb846d0bc25ff206a41b6fa18bd1",
+        "stored_as": "tests/ai-provider.test.mjs"
+      },
+      "tests/ai-routes.test.mjs": {
+        "sha256": "3deda5c5620c6fcfe1980942d7a2207bf874ab8ae08086400bf9a6c24e6a35ee",
+        "stored_as": "tests/ai-routes.test.mjs"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "a22f8b702a81d7c64491709326e64af4b3679252310b039978be3c4dfa2967a2",
+        "stored_as": "tests/luma-agent.test.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "77247839e95c9ad412dbf5ae2a7b20f7b5b67bea"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "ad4620ab4d1bee01160ccb6c99e26fc6724de2630dc7372f1c8d702400693ed0",
+        "stored_as": "agent-interface.css"
+      },
+      "app/api/ai/generate/route.ts": {
+        "sha256": "74d52b638840e6a3df53e735fa06f5c1b5b1e40e563b7a704a0188b5652c6235",
+        "stored_as": "app/api/ai/generate/route.ts"
+      },
+      "app/api/ai/settings/route.ts": {
+        "sha256": "d58a9928835cda0cc0e68b40ef0f804a3951db1a527540028d9a117ed5c5ae1c",
+        "stored_as": "app/api/ai/settings/route.ts"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/ai-connection.tsx": {
+        "sha256": "d0ab4bc7abd59b452780f093598ba894d1cb05aaa9fea758bc04fe4c40218788",
+        "stored_as": "components/ai-connection.tsx"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "be7b4a03e85f6a791805755b7e5c41e1ac43430071a60361da85f526e4997357",
+        "stored_as": "history/blobs/be7b4a03e85f6a791805755b7e5c41e1ac43430071a60361da85f526e4997357.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/ai-connections.ts": {
+        "sha256": "43e15dbd722f0a63dacdf850c50ef6a6ec7a581a1c98e77137775574ef60fccb",
+        "stored_as": "db/ai-connections.ts"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "618668ca5f11253e25718b0ad44ffa6569b0e53c20cd0b11507bfc17b225505a",
+        "stored_as": "db/schema.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "42ff5806465682659f72897a5e99f794da583262ff868cba9348c0ffe2d1b023",
+        "stored_as": "integration/page-agent.tsx.fragment"
+      },
+      "lib/ai-key-crypto.ts": {
+        "sha256": "af783c1d0080d13ea969ca7e500350c49df2e77c70408909a54748d8664bfc2c",
+        "stored_as": "lib/ai-key-crypto.ts"
+      },
+      "lib/ai-provider.ts": {
+        "sha256": "0dd963566f0e79e753ab4be15b3014a7b5202db6723c71b1dcde67e253047183",
+        "stored_as": "lib/ai-provider.ts"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "a791f8d6ebc2722975458171c84bbede1ff1b98c1d4d21fdae34f1e400fc75e1",
+        "stored_as": "lib/codex-page.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "a691ec017e832c5397f876e79ab1422e833f01100220b761db195977fa724405",
+        "stored_as": "lib/luma-agent.ts"
+      },
+      "lib/openai-api.ts": {
+        "sha256": "75794061f6ef18f5ef946530a1a32ec8dd763ee991b33e49925ba5b7ca4d8882",
+        "stored_as": "lib/openai-api.ts"
+      },
+      "lib/page-initiative.ts": {
+        "sha256": "72a7fee67c2f79ab37ef560869bfa6bfa11965836e2fcca87d5e816f70f41655",
+        "stored_as": "lib/page-initiative.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b",
+        "stored_as": "history/blobs/c56c4ef316ed62a016ba69bd5113ac363958bd6344329d00a698ca0dc286e36b.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/ai-provider.test.mjs": {
+        "sha256": "7083266decf66a43b773cf79ecae58908658eb846d0bc25ff206a41b6fa18bd1",
+        "stored_as": "tests/ai-provider.test.mjs"
+      },
+      "tests/ai-routes.test.mjs": {
+        "sha256": "3deda5c5620c6fcfe1980942d7a2207bf874ab8ae08086400bf9a6c24e6a35ee",
+        "stored_as": "tests/ai-routes.test.mjs"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "a22f8b702a81d7c64491709326e64af4b3679252310b039978be3c4dfa2967a2",
+        "stored_as": "tests/luma-agent.test.mjs"
+      },
+      "tests/page-initiative.test.mjs": {
+        "sha256": "a14813250dc6d8cb8a453b48e449e287ea0df44407b2ae9fa1b1e483fc70a35b",
+        "stored_as": "tests/page-initiative.test.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "git_commit": "b079dbde056593789c50d2c3822467b41bc4cdf7"
+    },
+    "files": {
+      "agent-interface.css": {
+        "sha256": "ad4620ab4d1bee01160ccb6c99e26fc6724de2630dc7372f1c8d702400693ed0",
+        "stored_as": "agent-interface.css"
+      },
+      "app/api/ai/generate/route.ts": {
+        "sha256": "74d52b638840e6a3df53e735fa06f5c1b5b1e40e563b7a704a0188b5652c6235",
+        "stored_as": "app/api/ai/generate/route.ts"
+      },
+      "app/api/ai/settings/route.ts": {
+        "sha256": "d58a9928835cda0cc0e68b40ef0f804a3951db1a527540028d9a117ed5c5ae1c",
+        "stored_as": "app/api/ai/settings/route.ts"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/ai-connection.tsx": {
+        "sha256": "d0ab4bc7abd59b452780f093598ba894d1cb05aaa9fea758bc04fe4c40218788",
+        "stored_as": "components/ai-connection.tsx"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "b7ec3a17e2576adabee4faf076d302a3319de31a6ad03ad8bf0a3c66a7b7b254",
+        "stored_as": "components/luma-pet.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/ai-connections.ts": {
+        "sha256": "43e15dbd722f0a63dacdf850c50ef6a6ec7a581a1c98e77137775574ef60fccb",
+        "stored_as": "db/ai-connections.ts"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "618668ca5f11253e25718b0ad44ffa6569b0e53c20cd0b11507bfc17b225505a",
+        "stored_as": "db/schema.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      },
+      "integration/page-agent.tsx.fragment": {
+        "sha256": "42ff5806465682659f72897a5e99f794da583262ff868cba9348c0ffe2d1b023",
+        "stored_as": "integration/page-agent.tsx.fragment"
+      },
+      "lib/ai-key-crypto.ts": {
+        "sha256": "af783c1d0080d13ea969ca7e500350c49df2e77c70408909a54748d8664bfc2c",
+        "stored_as": "lib/ai-key-crypto.ts"
+      },
+      "lib/ai-provider.ts": {
+        "sha256": "0dd963566f0e79e753ab4be15b3014a7b5202db6723c71b1dcde67e253047183",
+        "stored_as": "lib/ai-provider.ts"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "a791f8d6ebc2722975458171c84bbede1ff1b98c1d4d21fdae34f1e400fc75e1",
+        "stored_as": "lib/codex-page.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "a691ec017e832c5397f876e79ab1422e833f01100220b761db195977fa724405",
+        "stored_as": "lib/luma-agent.ts"
+      },
+      "lib/openai-api.ts": {
+        "sha256": "75794061f6ef18f5ef946530a1a32ec8dd763ee991b33e49925ba5b7ca4d8882",
+        "stored_as": "lib/openai-api.ts"
+      },
+      "lib/page-initiative.ts": {
+        "sha256": "72a7fee67c2f79ab37ef560869bfa6bfa11965836e2fcca87d5e816f70f41655",
+        "stored_as": "lib/page-initiative.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "pet-animations.css": {
+        "sha256": "2a2df546232c2b17b2cc46fdc82b2970c5eb7c8d3ca6c1336b673779243aefee",
+        "stored_as": "pet-animations.css"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/ai-provider.test.mjs": {
+        "sha256": "7083266decf66a43b773cf79ecae58908658eb846d0bc25ff206a41b6fa18bd1",
+        "stored_as": "tests/ai-provider.test.mjs"
+      },
+      "tests/ai-routes.test.mjs": {
+        "sha256": "3deda5c5620c6fcfe1980942d7a2207bf874ab8ae08086400bf9a6c24e6a35ee",
+        "stored_as": "tests/ai-routes.test.mjs"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "a22f8b702a81d7c64491709326e64af4b3679252310b039978be3c4dfa2967a2",
+        "stored_as": "tests/luma-agent.test.mjs"
+      },
+      "tests/page-initiative.test.mjs": {
+        "sha256": "a14813250dc6d8cb8a453b48e449e287ea0df44407b2ae9fa1b1e483fc70a35b",
+        "stored_as": "tests/page-initiative.test.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  },
+  {
+    "source": {
+      "source_export": "luma-openai-provider.tar.gz"
+    },
+    "files": {
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      }
+    }
+  },
+  {
+    "source": {
+      "source_export": "luma-page-initiative.tar.gz"
+    },
+    "files": {
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      }
+    }
+  },
+  {
+    "source": {
+      "source_export": "luma-pet-motion.tar.gz"
+    },
+    "files": {
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      }
+    }
+  },
+  {
+    "source": {
+      "source_export": "Luma-source.zip"
+    },
+    "files": {
+      "app/api/ai/generate/route.ts": {
+        "sha256": "74d52b638840e6a3df53e735fa06f5c1b5b1e40e563b7a704a0188b5652c6235",
+        "stored_as": "app/api/ai/generate/route.ts"
+      },
+      "app/api/ai/settings/route.ts": {
+        "sha256": "d58a9928835cda0cc0e68b40ef0f804a3951db1a527540028d9a117ed5c5ae1c",
+        "stored_as": "app/api/ai/settings/route.ts"
+      },
+      "app/chatgpt-auth.ts": {
+        "sha256": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
+        "stored_as": "app/chatgpt-auth.ts"
+      },
+      "components/ai-connection.tsx": {
+        "sha256": "d0ab4bc7abd59b452780f093598ba894d1cb05aaa9fea758bc04fe4c40218788",
+        "stored_as": "components/ai-connection.tsx"
+      },
+      "components/luma-pet.tsx": {
+        "sha256": "b7ec3a17e2576adabee4faf076d302a3319de31a6ad03ad8bf0a3c66a7b7b254",
+        "stored_as": "components/luma-pet.tsx"
+      },
+      "components/puter-ai.tsx": {
+        "sha256": "e4aa7cf090c0588027e7eb1e10bdaf08d41b2963798235287a2569d16950189e",
+        "stored_as": "components/puter-ai.tsx"
+      },
+      "components/ui/button.tsx": {
+        "sha256": "cc36af0f8b5019c33cc039fbf03bb952a513072b15b55b53c592b78af3e5f4c4",
+        "stored_as": "components/ui/button.tsx"
+      },
+      "components/ui/command.tsx": {
+        "sha256": "361193df1e3d64a9e9b5048f045264782fcb387aab3f00f2b805fdcbf538b16a",
+        "stored_as": "components/ui/command.tsx"
+      },
+      "components/ui/dialog.tsx": {
+        "sha256": "dce39c6adc47d997bd2567f8b7a72f466b0134715105cd42f9194007b8ecdb14",
+        "stored_as": "components/ui/dialog.tsx"
+      },
+      "components/ui/popover.tsx": {
+        "sha256": "31c350309ff5d3034e6ecf1b0eda75ba8855bdbf987fc7ad6d71f0ef07c5a447",
+        "stored_as": "components/ui/popover.tsx"
+      },
+      "components/ui/select.tsx": {
+        "sha256": "0b796a108a4eb5ba52d9ad938b7aea36dc56ae66c703a6d0a23dbc24f96daff3",
+        "stored_as": "components/ui/select.tsx"
+      },
+      "db/ai-connections.ts": {
+        "sha256": "43e15dbd722f0a63dacdf850c50ef6a6ec7a581a1c98e77137775574ef60fccb",
+        "stored_as": "db/ai-connections.ts"
+      },
+      "db/index.ts": {
+        "sha256": "dc7610b00b918e0ffff1360a63626f16655ced3064b2eaf96095a4101fb14bcd",
+        "stored_as": "db/index.ts"
+      },
+      "db/schema.ts": {
+        "sha256": "618668ca5f11253e25718b0ad44ffa6569b0e53c20cd0b11507bfc17b225505a",
+        "stored_as": "db/schema.ts"
+      },
+      "db/storage.ts": {
+        "sha256": "a3005189150c19e99eb39ed8eb3b8079320608502b32315db8a37ea8e83ebc2c",
+        "stored_as": "db/storage.ts"
+      },
+      "drizzle/0001_volatile_komodo.sql": {
+        "sha256": "739e1918c556125ea2ba555edab25d476fdc38ff10d387d9aeb06fff9a02f70b",
+        "stored_as": "drizzle/0001_volatile_komodo.sql"
+      },
+      "lib/ai-key-crypto.ts": {
+        "sha256": "af783c1d0080d13ea969ca7e500350c49df2e77c70408909a54748d8664bfc2c",
+        "stored_as": "lib/ai-key-crypto.ts"
+      },
+      "lib/ai-provider.ts": {
+        "sha256": "0dd963566f0e79e753ab4be15b3014a7b5202db6723c71b1dcde67e253047183",
+        "stored_as": "lib/ai-provider.ts"
+      },
+      "lib/codex-page.ts": {
+        "sha256": "a791f8d6ebc2722975458171c84bbede1ff1b98c1d4d21fdae34f1e400fc75e1",
+        "stored_as": "lib/codex-page.ts"
+      },
+      "lib/luma-agent.ts": {
+        "sha256": "a691ec017e832c5397f876e79ab1422e833f01100220b761db195977fa724405",
+        "stored_as": "lib/luma-agent.ts"
+      },
+      "lib/openai-api.ts": {
+        "sha256": "75794061f6ef18f5ef946530a1a32ec8dd763ee991b33e49925ba5b7ca4d8882",
+        "stored_as": "lib/openai-api.ts"
+      },
+      "lib/page-initiative.ts": {
+        "sha256": "72a7fee67c2f79ab37ef560869bfa6bfa11965836e2fcca87d5e816f70f41655",
+        "stored_as": "lib/page-initiative.ts"
+      },
+      "lib/puter.ts": {
+        "sha256": "7ee0a6ba3082cbf1ffd27ca13b20b691c12364dd37878a5d989ef6a53d23045d",
+        "stored_as": "lib/puter.ts"
+      },
+      "lib/utils.ts": {
+        "sha256": "53f3d3d070f0a9082934da25b875f9499855c2b0693868dd28be8c23d8730f68",
+        "stored_as": "lib/utils.ts"
+      },
+      "lib/workspace.ts": {
+        "sha256": "48db2f81e184dc23d0bb83259e65f9435bdde07d9a719d31c7809eb97dbcffbc",
+        "stored_as": "lib/workspace.ts"
+      },
+      "public/pet/luma-companion.png": {
+        "sha256": "a86e210af130e7d51103461d36320ea25a595dc24dc041b11bc9741f094d899b",
+        "stored_as": "public/pet/luma-companion.png"
+      },
+      "tests/ai-provider.test.mjs": {
+        "sha256": "7083266decf66a43b773cf79ecae58908658eb846d0bc25ff206a41b6fa18bd1",
+        "stored_as": "tests/ai-provider.test.mjs"
+      },
+      "tests/ai-routes.test.mjs": {
+        "sha256": "3deda5c5620c6fcfe1980942d7a2207bf874ab8ae08086400bf9a6c24e6a35ee",
+        "stored_as": "tests/ai-routes.test.mjs"
+      },
+      "tests/luma-agent.test.mjs": {
+        "sha256": "a22f8b702a81d7c64491709326e64af4b3679252310b039978be3c4dfa2967a2",
+        "stored_as": "tests/luma-agent.test.mjs"
+      },
+      "tests/page-initiative.test.mjs": {
+        "sha256": "a14813250dc6d8cb8a453b48e449e287ea0df44407b2ae9fa1b1e483fc70a35b",
+        "stored_as": "tests/page-initiative.test.mjs"
+      },
+      "tests/puter-session.test.mjs": {
+        "sha256": "a3d256d53ea21c382077ea50ede8133c8a95f8d8dcac509d0e8a4baa66498399",
+        "stored_as": "tests/puter-session.test.mjs"
+      }
+    }
+  }
+]
